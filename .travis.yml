@@ -14,10 +14,15 @@ env:
     - CONDA_PY=36
   global:
     # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
-    - secure: "nLfU5YiRiSpZ8IG0Nn+3nWGBGvrI1sAjyHKOly+yv05KrFEdcMGMZZ/0V057P1yZjNeMOM4CNbFYrrPeozK7q+nfGsBVQFKwbp/srCCjFS5ordJE1xjtcRT8VqXEvvM6aqOVwwvXXyn5IgLs7d4xnHuxSQMUC7E9NFdUf7bnnKiuWHNoz6yjew/rFLkoUNZeITfA6FWc5NNP/Qz9qzWGUwFTs2hWLVGfnF94Eke/qWDeGdg2nPspOEeItGdd6bCU8BIHTiGlbdWMr81GyeXly36bcG7otess+rkuBEgnai8lgSBdyGBNTw/5buVp+l8R+Xqw7QKz9C2kE04ZdygtGTbq/9qq8xDdLvYiYsE+mgW7sEizn0NxInodv/XN7zpCUQsWBJRcLI+90NpABq4pbqUxXGkblxYM2368SszCiEZd7grwLSVMVteJ4p1pQpEd0j6EPYCTXGsJ3DAy0BEP2CLgeSaIteUqympi+PaLvm1ypuxA6ZltLr2zXL/av/d58pvG7I9iVxULHTjT2YlSiPeK+bUdT/fipJDWo29nE/k9wMsBGabP7iZlhdSwadmnkJ9p5pbR3nfaPMZntiW+XyfixkqARWyNYFv320giEstq+2HHol9uj/Uc7lPj88eJB2fp+ndLLdX2WTS0Qi0Lta2e0VRE48Bd8++H7wFJmmg="
+    - secure: "Ycp086ispMCzOIaB457jfF5YIH1pGOCviu4kqLaRqTt2PHXbj8v+KpWYkmprxFbYpf62NM+atyWZpdvBDMTxrGooBi5LLNI9KVsj/7x9tQBG97RXJtTv907WRtTCXAUMpY7PZcU3oRz+5nIzfbAUIBmGq2T3SfTruNL5G+v2OjsYlDT5aU9qKNkESCOmDmg6i+WqDF+kFHzkKthnfS6WbypNEHNXrZoG6M6FOv4qyQ/RtLCkiIHP8fEsTk0erwcIClUcny4Yg3gi0CXwlrUohM+0q+YySsw8oZkQdys4AqlSRb36tci/aWs9wyONcZf6+3hlWc3SlJRtqCGbx7LqHgGdGaeX7JvROkxdztph3oyyPAQDfssTyxNRNLJpiF7CraY7IlcJ5RD6LOWUNHzrDLizpGHYtRqM4ZyJH8LxrAoa4NBg6jI1ogcsoa5ekdvo+xRQimoj2+prneYYuELveFlAYB0AnTSfpyRd4XRbITaV47giARCQ5RS9YJGjiN+LSYv8KRJMjPK8+vdhlNXfWMsEIMhofPrDh/crOhGkOBH76c7n7b2Q4z63Vd1X8lI1kUGYF8clcqhWFSY5GJbjYc+ssHIvSelsewOpeRa94JZ26TYFqZTwEyQc8VXrnAHcaGJe7WDFe/IclEkI6OE0QjrMBKHLIVXOYf77NzxzMC0="
 
 
 before_install:
+    # Fast finish the PR.
+    - |
+      (curl https://raw.githubusercontent.com/conda-forge/conda-forge-build-setup-feedstock/master/recipe/ff_ci_pr_build.py | \
+          python - -v --ci "travis" "${TRAVIS_REPO_SLUG}" "${TRAVIS_BUILD_NUMBER}" "${TRAVIS_PULL_REQUEST}") || exit 1
+
     # Remove homebrew.
     - |
       echo ""
