@@ -1,6 +1,6 @@
 {% set name = "latexcodec" %}
-{% set version = "1.0.5" %}
-{% set sha256 = "8e1cba346e73dad29dc795150cd8090175491d40c43c81b868cf67746fc874d2" %}
+{% set version = "1.0.6" %}
+{% set sha256 = "e3ed029a17a168db4a1f0d87f81cff556879f229143cc5f5d49d7f894e29a74b" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
