@@ -1,7 +1,3 @@
-<!--
-# -*- mode: jinja -*-
--->
-
 About latexcodec
 ================
 
@@ -18,8 +14,17 @@ Summary: Lexer and codec to work with LaTeX code in Python.
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/latexcodec-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/latexcodec-feedstock)
+
+<table><tr>
+    
+    <td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4999&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/latexcodec-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
