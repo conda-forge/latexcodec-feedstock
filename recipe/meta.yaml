@@ -1,6 +1,6 @@
 {% set name = "latexcodec" %}
-{% set version = "2.0.1" %}
-{% set sha256 = "eda36ddfc969f86c9a8fdd50c12b484fa42dbfa33b84422144643b60081ca022" %}
+{% set version = "3.0.0" %}
+{% set sha256 = "bba70a0705b292c7678da6800672d7ebaf145b2d74787bd1c87bf476e7441317" %}
 
 package:
   name: {{ name|lower }}
